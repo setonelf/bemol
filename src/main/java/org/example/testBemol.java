@@ -1,21 +1,26 @@
 package org.example;
+import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class testBemol {
 
-
+    //WebDriver driver;
 
     public static void main (String[] args) throws InterruptedException {
+        WebDriver driver;
+        driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\thiag\\Downloads\\chromedriver-win64\\chromedriver.exe");
 
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\thiag\\Downloads\\chromedriver-win64\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
@@ -37,9 +42,11 @@ public class testBemol {
         Thread.sleep(2000);
         page_objects_trivago_main.btn_pesquisar(driver).click();
         wait.until(d -> page_objects_trivago_pesquisa.btn_Seletor(driver).isDisplayed());
-        wait.until(d -> page_objects_trivago_pesquisa.cnt_Security(driver).isDisplayed());
-        wait.until(ExpectedConditions.invisibilityOf(page_objects_trivago_pesquisa.cnt_Security(driver)));
+        //wait.until(d -> page_objects_trivago_pesquisa.cnt_Security(driver).isDisplayed());
+        //wait.until(ExpectedConditions.invisibilityOf(page_objects_trivago_pesquisa.cnt_Security(driver)));
         page_objects_trivago_pesquisa.slct_Opcao2(driver).click();
+        Thread.sleep(5000);
+        page_objects_trivago_pesquisa.lbl_Preco(driver).click();
         Thread.sleep(5000);
         String nome = page_objects_trivago_pesquisa.lst_Nome1(driver).getText();
         String avaliacao = page_objects_trivago_pesquisa.lst_Avaliacao1(driver).getText();

@@ -27,7 +27,7 @@ public class page_objects_trivago_pesquisa {
 
     //nome do primeiro da lista
     public static WebElement lst_Nome1(WebDriver driver) {
-        element = driver.findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/main/div[3]/div[1]/div/div[2]/div/div/ol/li[1]/div/article/div[2]/div[1]/section/h2/button/span"));
+        element = driver.findElement(By.xpath("//*[@class=\"relative min-h-screen pt-1\"]/div/ol/li[1]/div/article/div[2]/div/section/h2/button/span"));
         return element;
     }
 
@@ -37,9 +37,14 @@ public class page_objects_trivago_pesquisa {
         return element;
     }
 
+    public static WebElement lbl_Preco(WebDriver driver) {
+        element = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[1]/main/div[1]/div[2]/div/div[3]/div/div/fieldset/button[1]/span/span[2]/span[2]"));
+        return element;
+    }
+
     //preco do primeiro da lista
     public static WebElement lst_Preco1(WebDriver driver) {
-        element = driver.findElement(By.xpath("//*/li[1]/div/article/div[2]/div[2]/div[1]/div/div[2]/div[1]/div/p"));
+        element = driver.findElement(By.xpath("//*[@class=\"relative min-h-screen pt-1\"]/div/ol/li[1]/div/article/div[2]/div[2]/div[1]/div/div[3]/div/div/p"));
         return element;
     }
 }
