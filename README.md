@@ -13,4 +13,8 @@ On this project I worked with two Frameworks
 
   To API tests I create a mail generator in order to provide ramdom valid emails to validate the API
     - GeradorDeEmail.java
-  Then to test the API i wrote the tests in ServeRestApi.java, the API was running in local machine and was provided by the company that requested me
+  Then to test the API i wrote the tests in ServeRestApi.java, the API validated could check in this site: https://serverest.dev/, the items tested was:
+    - Create an user
+    - Check if the user was created
+    - Create a product
+    - Check if the product was created
